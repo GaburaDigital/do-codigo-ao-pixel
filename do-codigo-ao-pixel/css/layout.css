@@ -1,0 +1,413 @@
+/* =========================================================================
+   layout.css — Estrutura da aplicacao, divisao das areas e responsividade.
+   Prioridade: computador em paisagem. Depois tablet e celular.
+   ========================================================================= */
+
+#app {
+  height: 100vh;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+}
+
+/* ======================================================= barra superior */
+#barra-superior {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: 6px var(--esp-3);
+  background: var(--painel-alto);
+  border-bottom: 1px solid var(--linha-forte);
+  box-shadow: var(--sombra-alto);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+#barra-superior::-webkit-scrollbar { display: none; }
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  flex: none;
+}
+.marca svg { width: 22px; height: 22px; display: block; }
+.marca-nome {
+  font-size: var(--t-peq);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.marca-nome b { color: var(--verde); font-weight: 400; }
+
+.leitura {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: none;
+  padding: 0 var(--esp-3);
+  border-left: 1px solid var(--linha);
+}
+.leitura-rotulo {
+  font-size: var(--t-micro);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.leitura-valor {
+  font-size: var(--t-med);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--verde);
+}
+.leitura-valor.neutro { color: var(--texto); }
+
+#barra-superior .espaco { flex: 1 1 auto; min-width: var(--esp-2); }
+
+/* ============================================================== corpo */
+#palco {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--fundo);
+}
+
+/* ------------------------------------------------ tela de configuracao */
+#tela-config {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  padding: var(--esp-4);
+  display: flex;
+  justify-content: center;
+}
+.config-caixa {
+  width: min(940px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+  align-self: flex-start;
+}
+
+.grade-modos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--esp-2);
+}
+.cartao-modo {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: var(--esp-3);
+  min-height: 92px;
+  background: var(--painel-fundo);
+  border: 1px solid var(--linha-forte);
+  cursor: pointer;
+  color: var(--texto);
+  transition: border-color var(--transicao), background var(--transicao);
+}
+.cartao-modo:hover { border-color: var(--linha-luz); }
+.cartao-modo[aria-pressed="true"] {
+  border-color: var(--verde);
+  background: var(--verde-vidro);
+}
+.cartao-modo .cm-topo { display: flex; align-items: center; gap: var(--esp-2); }
+.cartao-modo .cm-titulo {
+  font-size: var(--t-peq);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.cartao-modo[aria-pressed="true"] .cm-titulo { color: var(--verde); }
+.cartao-modo .cm-desc {
+  font-size: var(--t-mini);
+  color: var(--texto-suave);
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.grade-ajustes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--esp-3);
+}
+
+/* --------------------------------------------------- tela de treino */
+#tela-treino {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: var(--col-codigo, 1fr) 7px var(--col-grid, 1fr);
+  gap: 0;
+  padding: var(--esp-2);
+  min-height: 0;
+}
+
+#area-codigo, #area-grid { min-width: 0; min-height: 0; }
+
+#divisor-paineis {
+  cursor: col-resize;
+  background: transparent;
+  position: relative;
+  touch-action: none;
+}
+#divisor-paineis::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+  background-image: repeating-linear-gradient(
+    to bottom, var(--linha-forte) 0 2px, transparent 2px 5px
+  );
+}
+#divisor-paineis:hover::after { background-image: repeating-linear-gradient(
+    to bottom, var(--verde) 0 2px, transparent 2px 5px); }
+
+/* --------------------------------------------------- area do codigo */
+.barra-ferramentas {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-2);
+  border-bottom: 1px solid var(--linha);
+  flex: none;
+  flex-wrap: wrap;
+}
+
+#blockly-area { flex: 1 1 auto; min-height: 0; position: relative; }
+#blockly-div { position: absolute; inset: 0; }
+
+#portugol-area {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+#portugol-editor {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  resize: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--painel-fundo);
+  color: var(--texto);
+  font-size: var(--t-base);
+  line-height: 1.55;
+  padding: var(--esp-3);
+  tab-size: 2;
+  white-space: pre;
+  overflow: auto;
+}
+
+.faixa-erro {
+  flex: none;
+  padding: var(--esp-2) var(--esp-3);
+  background: rgba(255, 92, 92, 0.12);
+  border-top: 1px solid var(--vermelho);
+  color: var(--vermelho);
+  font-size: var(--t-peq);
+  line-height: 1.45;
+  max-height: 96px;
+  overflow: auto;
+}
+
+/* ---------------------------------------------------- area do grid */
+#grid-envoltorio {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--esp-3);
+  background:
+    radial-gradient(circle at 50% 40%, var(--painel) 0%, var(--painel-fundo) 100%);
+  position: relative;
+}
+
+#grid-palco {
+  position: relative;
+  display: block;
+  border: 1px solid var(--linha-forte);
+  box-shadow: 0 0 0 3px var(--painel-fundo), var(--sombra-alto);
+  background-color: var(--painel-fundo);
+  /* xadrez de transparencia */
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.035) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.035) 75%),
+    linear-gradient(45deg, rgba(255,255,255,0.035) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.035) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  image-rendering: pixelated;
+  max-width: 100%;
+  max-height: 100%;
+}
+:root[data-tema="claro"] #grid-palco {
+  background-image:
+    linear-gradient(45deg, rgba(0,0,0,0.055) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.055) 75%),
+    linear-gradient(45deg, rgba(0,0,0,0.055) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.055) 75%);
+}
+
+#grid-palco canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.painel-status-grid {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: var(--esp-2) var(--esp-3);
+  border-top: 1px solid var(--linha);
+  flex: none;
+  flex-wrap: wrap;
+}
+.bloco-conclusao { flex: 1 1 190px; min-width: 150px; }
+
+/* --------------------------------------------------------- NOVA-7 */
+#nova {
+  flex: none;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--esp-2);
+  padding: var(--esp-2) var(--esp-3);
+  border-top: 1px solid var(--linha);
+  background: var(--painel-fundo);
+  min-height: 52px;
+}
+#nova .nova-icone { flex: none; margin-top: 1px; }
+#nova .nova-texto {
+  font-size: var(--t-peq);
+  line-height: 1.45;
+  color: var(--texto-suave);
+}
+#nova .nova-texto b { color: var(--ciano); font-weight: 400; }
+
+/* ==================================================== barra inferior */
+#barra-inferior {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: 5px var(--esp-3);
+  background: var(--painel-alto);
+  border-top: 1px solid var(--linha-forte);
+  font-size: var(--t-mini);
+  color: var(--texto-suave);
+  flex-wrap: wrap;
+}
+#barra-inferior .espaco { flex: 1 1 auto; }
+#barra-inferior a { color: var(--ciano); text-decoration: none; }
+#barra-inferior a:hover { text-decoration: underline; }
+.credito-gabura b { color: var(--verde); font-weight: 400; letter-spacing: 0.08em; }
+.link-repo { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+
+/* ====================================================== tela de boot */
+#boot {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: var(--fundo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-4);
+  padding: var(--esp-5);
+  cursor: pointer;
+}
+#boot-marca { width: min(120px, 30vw); height: auto; }
+#boot-registro {
+  width: min(620px, 100%);
+  height: min(280px, 42vh);
+  overflow: hidden;
+  font-size: var(--t-peq);
+  line-height: 1.65;
+  color: var(--texto-suave);
+  white-space: pre-wrap;
+}
+#boot-registro .ok { color: var(--verde); }
+#boot-registro .alien { color: var(--violeta); letter-spacing: 0.18em; }
+#boot-dica { font-size: var(--t-mini); color: var(--texto-fraco); letter-spacing: 0.12em; }
+.cursor-piscando::after {
+  content: "_";
+  color: var(--verde);
+  animation: piscar 1s steps(2, start) infinite;
+}
+@keyframes piscar { to { visibility: hidden; } }
+
+/* ================================================ abas para telas pequenas */
+#abas-mobile { display: none; }
+#barra-abas { display: none; }
+.so-mobile { display: none !important; }
+
+@media (max-width: 860px), (orientation: portrait) and (max-width: 1100px) {
+  #tela-treino {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    padding: var(--esp-2);
+    gap: var(--esp-2);
+  }
+  #divisor-paineis { display: none; }
+
+  #tela-treino[data-aba="codigo"] #area-grid { display: none; }
+  #tela-treino[data-aba="grid"] #area-codigo { display: none; }
+
+  /* As abas do cabecalho podiam sumir na rolagem horizontal e prender o aluno
+     na tela do grid. No celular a navegacao fica nesta barra fixa embaixo. */
+  #abas-mobile { display: none; }
+  .so-mobile { display: inline-flex !important; }
+
+  #barra-abas {
+    display: flex;
+    gap: var(--esp-2);
+    padding-top: 2px;
+  }
+  #barra-abas .btn { flex: 1 1 0; min-height: 44px; gap: 7px; }
+  #barra-abas .btn[aria-pressed="true"] {
+    border-color: var(--verde);
+    color: var(--verde);
+    background: var(--verde-vidro);
+  }
+
+  #barra-superior { gap: var(--esp-2); padding: 5px var(--esp-2); }
+  .leitura { padding: 0 var(--esp-2); }
+  .marca-nome { display: none; }
+
+  /* Espelho do grid enquanto o aluno programa. */
+  #espelho-grid {
+    position: absolute;
+    right: var(--esp-3);
+    bottom: var(--esp-3);
+    width: 92px;
+    height: 92px;
+    border: 1px solid var(--linha-forte);
+    background: var(--painel-fundo);
+    box-shadow: 0 2px 0 #00000066;
+    z-index: 30;
+    padding: 2px;
+    cursor: pointer;
+  }
+  #espelho-grid canvas { width: 100%; height: 100%; image-rendering: pixelated; display: block; }
+  #tela-treino[data-aba="grid"] #espelho-grid { display: none; }
+}
+
+@media (min-width: 861px) {
+  #espelho-grid { display: none; }
+}
+
+@media (max-width: 520px) {
+  #barra-inferior { font-size: var(--t-micro); gap: var(--esp-2); }
+  .credito-gabura .frase-longa { display: none; }
+  .leitura-valor { font-size: var(--t-base); }
+}

@@ -1,0 +1,2013 @@
+{
+ "projeto": "Do Codigo ao Pixel",
+ "versaoCatalogo": 1,
+ "atualizadoEm": "2026-08-30",
+ "niveis": [
+  {
+   "tamanho": 32,
+   "rotulo": "32 x 32",
+   "patente": "Sonda Leve",
+   "pasta": "ATIVIDADES/nivel-32",
+   "categorias": {
+    "repeticao": [
+     {
+      "arquivo": "rep-001-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-002-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-003-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-004-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-005-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-006-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-007-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-008-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-009-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-010-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-011-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-012-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-013-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-014-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-015-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-016-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-017-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-018-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-019-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-020-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-021-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-022-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-023-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-024-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-025-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-026-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-027-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-028-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-029-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-030-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-031-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-032-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-033-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-034-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-035-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-036-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-037-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-038-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-039-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-040-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-041-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-042-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-043-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-044-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-045-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-046-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-047-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-048-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-049-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-050-antena-multipla.json",
+      "nome": "Antena Multipla"
+     }
+    ],
+    "condicao": [
+     {
+      "arquivo": "cond-001-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-002-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-003-rampa-invertida.json",
+      "nome": "Rampa Invertida"
+     },
+     {
+      "arquivo": "cond-004-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-005-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-006-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-007-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-008-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-009-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-010-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-011-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-012-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-013-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-014-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-015-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-016-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-017-rampa-de-lancamento.json",
+      "nome": "Rampa de Lancamento"
+     },
+     {
+      "arquivo": "cond-018-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-019-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-020-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-021-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-022-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-023-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-024-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-025-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-026-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-027-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-028-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-029-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-030-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-031-rampa-de-lancamento.json",
+      "nome": "Rampa de Lancamento"
+     },
+     {
+      "arquivo": "cond-032-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-033-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-034-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-035-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-036-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-037-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-038-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-039-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-040-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-041-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-042-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-043-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-044-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-045-rampa-invertida.json",
+      "nome": "Rampa Invertida"
+     },
+     {
+      "arquivo": "cond-046-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-047-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-048-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-049-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-050-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     }
+    ],
+    "procedimento": [
+     {
+      "arquivo": "proc-001-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-002-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-003-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-004-sistema-com-3-luas.json",
+      "nome": "Sistema com 3 Luas"
+     },
+     {
+      "arquivo": "proc-005-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-006-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-007-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-008-rotor-de-8-pas.json",
+      "nome": "Rotor de 8 Pas"
+     },
+     {
+      "arquivo": "proc-009-doca-de-3-foguetes.json",
+      "nome": "Doca de 3 Foguetes"
+     },
+     {
+      "arquivo": "proc-010-rede-de-7-satelites.json",
+      "nome": "Rede de 7 Satelites"
+     },
+     {
+      "arquivo": "proc-011-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-012-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-013-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-014-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-015-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-016-sistema-com-6-luas.json",
+      "nome": "Sistema com 6 Luas"
+     },
+     {
+      "arquivo": "proc-017-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-018-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-019-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-020-rotor-de-4-pas.json",
+      "nome": "Rotor de 4 Pas"
+     },
+     {
+      "arquivo": "proc-021-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-022-rede-de-5-satelites.json",
+      "nome": "Rede de 5 Satelites"
+     },
+     {
+      "arquivo": "proc-023-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-024-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-025-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-026-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-027-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-028-sistema-com-4-luas.json",
+      "nome": "Sistema com 4 Luas"
+     },
+     {
+      "arquivo": "proc-029-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-030-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-031-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-032-rotor-de-8-pas.json",
+      "nome": "Rotor de 8 Pas"
+     },
+     {
+      "arquivo": "proc-033-doca-de-3-foguetes.json",
+      "nome": "Doca de 3 Foguetes"
+     },
+     {
+      "arquivo": "proc-034-rede-de-7-satelites.json",
+      "nome": "Rede de 7 Satelites"
+     },
+     {
+      "arquivo": "proc-035-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-036-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-037-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-038-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-039-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-040-sistema-com-3-luas.json",
+      "nome": "Sistema com 3 Luas"
+     },
+     {
+      "arquivo": "proc-041-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-042-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-043-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-044-rotor-de-8-pas.json",
+      "nome": "Rotor de 8 Pas"
+     },
+     {
+      "arquivo": "proc-045-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-046-rede-de-6-satelites.json",
+      "nome": "Rede de 6 Satelites"
+     },
+     {
+      "arquivo": "proc-047-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-048-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-049-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-050-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     }
+    ]
+   },
+   "total": 150
+  },
+  {
+   "tamanho": 64,
+   "rotulo": "64 x 64",
+   "patente": "Cruzador",
+   "pasta": "ATIVIDADES/nivel-64",
+   "categorias": {
+    "repeticao": [
+     {
+      "arquivo": "rep-001-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-002-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-003-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-004-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-005-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-006-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-007-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-008-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-009-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-010-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-011-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-012-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-013-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-014-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-015-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-016-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-017-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-018-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-019-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-020-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-021-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-022-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-023-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-024-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-025-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-026-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-027-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-028-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-029-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-030-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-031-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-032-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-033-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-034-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-035-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-036-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-037-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-038-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-039-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-040-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-041-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-042-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-043-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-044-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-045-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-046-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-047-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-048-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-049-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-050-antena-multipla.json",
+      "nome": "Antena Multipla"
+     }
+    ],
+    "condicao": [
+     {
+      "arquivo": "cond-001-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-002-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-003-rampa-invertida.json",
+      "nome": "Rampa Invertida"
+     },
+     {
+      "arquivo": "cond-004-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-005-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-006-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-007-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-008-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-009-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-010-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-011-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-012-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-013-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-014-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-015-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-016-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-017-rampa-invertida.json",
+      "nome": "Rampa Invertida"
+     },
+     {
+      "arquivo": "cond-018-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-019-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-020-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-021-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-022-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-023-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-024-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-025-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-026-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-027-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-028-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-029-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-030-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-031-rampa-de-lancamento.json",
+      "nome": "Rampa de Lancamento"
+     },
+     {
+      "arquivo": "cond-032-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-033-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-034-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-035-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-036-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-037-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-038-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-039-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-040-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-041-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-042-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-043-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-044-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-045-rampa-invertida.json",
+      "nome": "Rampa Invertida"
+     },
+     {
+      "arquivo": "cond-046-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-047-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-048-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-049-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-050-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     }
+    ],
+    "procedimento": [
+     {
+      "arquivo": "proc-001-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-002-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-003-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-004-sistema-com-4-luas.json",
+      "nome": "Sistema com 4 Luas"
+     },
+     {
+      "arquivo": "proc-005-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-006-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-007-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-008-rotor-de-4-pas.json",
+      "nome": "Rotor de 4 Pas"
+     },
+     {
+      "arquivo": "proc-009-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-010-rede-de-7-satelites.json",
+      "nome": "Rede de 7 Satelites"
+     },
+     {
+      "arquivo": "proc-011-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-012-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-013-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-014-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-015-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-016-sistema-com-4-luas.json",
+      "nome": "Sistema com 4 Luas"
+     },
+     {
+      "arquivo": "proc-017-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-018-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-019-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-020-rotor-de-8-pas.json",
+      "nome": "Rotor de 8 Pas"
+     },
+     {
+      "arquivo": "proc-021-doca-de-3-foguetes.json",
+      "nome": "Doca de 3 Foguetes"
+     },
+     {
+      "arquivo": "proc-022-rede-de-5-satelites.json",
+      "nome": "Rede de 5 Satelites"
+     },
+     {
+      "arquivo": "proc-023-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-024-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-025-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-026-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-027-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-028-sistema-com-6-luas.json",
+      "nome": "Sistema com 6 Luas"
+     },
+     {
+      "arquivo": "proc-029-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-030-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-031-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-032-rotor-de-8-pas.json",
+      "nome": "Rotor de 8 Pas"
+     },
+     {
+      "arquivo": "proc-033-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-034-rede-de-8-satelites.json",
+      "nome": "Rede de 8 Satelites"
+     },
+     {
+      "arquivo": "proc-035-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-036-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-037-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-038-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-039-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-040-sistema-com-6-luas.json",
+      "nome": "Sistema com 6 Luas"
+     },
+     {
+      "arquivo": "proc-041-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-042-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-043-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-044-rotor-de-4-pas.json",
+      "nome": "Rotor de 4 Pas"
+     },
+     {
+      "arquivo": "proc-045-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-046-rede-de-7-satelites.json",
+      "nome": "Rede de 7 Satelites"
+     },
+     {
+      "arquivo": "proc-047-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-048-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-049-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-050-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     }
+    ]
+   },
+   "total": 150
+  },
+  {
+   "tamanho": 128,
+   "rotulo": "128 x 128",
+   "patente": "Nave Capital",
+   "pasta": "ATIVIDADES/nivel-128",
+   "categorias": {
+    "repeticao": [
+     {
+      "arquivo": "rep-001-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-002-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-003-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-004-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-005-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-006-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-007-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-008-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-009-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-010-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-011-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-012-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-013-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-014-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-015-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-016-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-017-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-018-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-019-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-020-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-021-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-022-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-023-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-024-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-025-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-026-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-027-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-028-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-029-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-030-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-031-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-032-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-033-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-034-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-035-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-036-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     },
+     {
+      "arquivo": "rep-037-espiral-de-nucleo.json",
+      "nome": "Espiral de Nucleo"
+     },
+     {
+      "arquivo": "rep-038-faixas-diagonais.json",
+      "nome": "Faixas Diagonais"
+     },
+     {
+      "arquivo": "rep-039-orbita-sincrona.json",
+      "nome": "Orbita Sincrona"
+     },
+     {
+      "arquivo": "rep-040-torre-modular.json",
+      "nome": "Torre Modular"
+     },
+     {
+      "arquivo": "rep-041-listras-horizontais.json",
+      "nome": "Listras Horizontais"
+     },
+     {
+      "arquivo": "rep-042-colunas-de-dados.json",
+      "nome": "Colunas de Dados"
+     },
+     {
+      "arquivo": "rep-043-molduras-concentricas.json",
+      "nome": "Molduras Concentricas"
+     },
+     {
+      "arquivo": "rep-044-escada-de-acesso.json",
+      "nome": "Escada de Acesso"
+     },
+     {
+      "arquivo": "rep-045-grade-de-sensores.json",
+      "nome": "Grade de Sensores"
+     },
+     {
+      "arquivo": "rep-046-leitura-de-energia.json",
+      "nome": "Leitura de Energia"
+     },
+     {
+      "arquivo": "rep-047-sinal-em-zigue-zague.json",
+      "nome": "Sinal em Zigue-Zague"
+     },
+     {
+      "arquivo": "rep-048-antena-multipla.json",
+      "nome": "Antena Multipla"
+     },
+     {
+      "arquivo": "rep-049-piso-da-ponte.json",
+      "nome": "Piso da Ponte"
+     },
+     {
+      "arquivo": "rep-050-campo-de-cruzes.json",
+      "nome": "Campo de Cruzes"
+     }
+    ],
+    "condicao": [
+     {
+      "arquivo": "cond-001-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-002-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-003-rampa-de-lancamento.json",
+      "nome": "Rampa de Lancamento"
+     },
+     {
+      "arquivo": "cond-004-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-005-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-006-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-007-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-008-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-009-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-010-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-011-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-012-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-013-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-014-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-015-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-016-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-017-rampa-invertida.json",
+      "nome": "Rampa Invertida"
+     },
+     {
+      "arquivo": "cond-018-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-019-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-020-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-021-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-022-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-023-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-024-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-025-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-026-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-027-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-028-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-029-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-030-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-031-rampa-invertida.json",
+      "nome": "Rampa Invertida"
+     },
+     {
+      "arquivo": "cond-032-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-033-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-034-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-035-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-036-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     },
+     {
+      "arquivo": "cond-037-ampulheta-de-salto.json",
+      "nome": "Ampulheta de Salto"
+     },
+     {
+      "arquivo": "cond-038-onda-de-radio.json",
+      "nome": "Onda de Radio"
+     },
+     {
+      "arquivo": "cond-039-tabuada-estelar.json",
+      "nome": "Tabuada Estelar"
+     },
+     {
+      "arquivo": "cond-040-escotilha-reforcada.json",
+      "nome": "Escotilha Reforcada"
+     },
+     {
+      "arquivo": "cond-041-estrela-guia.json",
+      "nome": "Estrela Guia"
+     },
+     {
+      "arquivo": "cond-042-fase-da-lua.json",
+      "nome": "Fase da Lua"
+     },
+     {
+      "arquivo": "cond-043-planeta-solido.json",
+      "nome": "Planeta Solido"
+     },
+     {
+      "arquivo": "cond-044-cristal-de-navegacao.json",
+      "nome": "Cristal de Navegacao"
+     },
+     {
+      "arquivo": "cond-045-rampa-de-lancamento.json",
+      "nome": "Rampa de Lancamento"
+     },
+     {
+      "arquivo": "cond-046-setores-do-conves.json",
+      "nome": "Setores do Convés"
+     },
+     {
+      "arquivo": "cond-047-malha-de-verificacao.json",
+      "nome": "Malha de Verificacao"
+     },
+     {
+      "arquivo": "cond-048-eco-de-radar.json",
+      "nome": "Eco de Radar"
+     },
+     {
+      "arquivo": "cond-049-fractal-alienigena.json",
+      "nome": "Fractal Alienigena"
+     },
+     {
+      "arquivo": "cond-050-atmosfera-em-camadas.json",
+      "nome": "Atmosfera em Camadas"
+     }
+    ],
+    "procedimento": [
+     {
+      "arquivo": "proc-001-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-002-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-003-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-004-sistema-com-3-luas.json",
+      "nome": "Sistema com 3 Luas"
+     },
+     {
+      "arquivo": "proc-005-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-006-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-007-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-008-rotor-de-4-pas.json",
+      "nome": "Rotor de 4 Pas"
+     },
+     {
+      "arquivo": "proc-009-doca-de-4-foguetes.json",
+      "nome": "Doca de 4 Foguetes"
+     },
+     {
+      "arquivo": "proc-010-rede-de-5-satelites.json",
+      "nome": "Rede de 5 Satelites"
+     },
+     {
+      "arquivo": "proc-011-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-012-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-013-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-014-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-015-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-016-sistema-com-6-luas.json",
+      "nome": "Sistema com 6 Luas"
+     },
+     {
+      "arquivo": "proc-017-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-018-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-019-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-020-rotor-de-8-pas.json",
+      "nome": "Rotor de 8 Pas"
+     },
+     {
+      "arquivo": "proc-021-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-022-rede-de-6-satelites.json",
+      "nome": "Rede de 6 Satelites"
+     },
+     {
+      "arquivo": "proc-023-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-024-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-025-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-026-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-027-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-028-sistema-com-6-luas.json",
+      "nome": "Sistema com 6 Luas"
+     },
+     {
+      "arquivo": "proc-029-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-030-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-031-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-032-rotor-de-4-pas.json",
+      "nome": "Rotor de 4 Pas"
+     },
+     {
+      "arquivo": "proc-033-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-034-rede-de-7-satelites.json",
+      "nome": "Rede de 7 Satelites"
+     },
+     {
+      "arquivo": "proc-035-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-036-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-037-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-038-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     },
+     {
+      "arquivo": "proc-039-marcadores-de-ancoragem.json",
+      "nome": "Marcadores de Ancoragem"
+     },
+     {
+      "arquivo": "proc-040-sistema-com-5-luas.json",
+      "nome": "Sistema com 5 Luas"
+     },
+     {
+      "arquivo": "proc-041-selo-simetrico.json",
+      "nome": "Selo Simetrico"
+     },
+     {
+      "arquivo": "proc-042-torres-de-comunicacao.json",
+      "nome": "Torres de Comunicacao"
+     },
+     {
+      "arquivo": "proc-043-deposito-de-cristais.json",
+      "nome": "Deposito de Cristais"
+     },
+     {
+      "arquivo": "proc-044-rotor-de-4-pas.json",
+      "nome": "Rotor de 4 Pas"
+     },
+     {
+      "arquivo": "proc-045-doca-de-2-foguetes.json",
+      "nome": "Doca de 2 Foguetes"
+     },
+     {
+      "arquivo": "proc-046-rede-de-6-satelites.json",
+      "nome": "Rede de 6 Satelites"
+     },
+     {
+      "arquivo": "proc-047-mosaico-de-casco.json",
+      "nome": "Mosaico de Casco"
+     },
+     {
+      "arquivo": "proc-048-estandarte-da-frota.json",
+      "nome": "Estandarte da Frota"
+     },
+     {
+      "arquivo": "proc-049-frota-de-reconhecimento.json",
+      "nome": "Frota de Reconhecimento"
+     },
+     {
+      "arquivo": "proc-050-contato-nao-identificado.json",
+      "nome": "Contato Nao Identificado"
+     }
+    ]
+   },
+   "total": 150
+  }
+ ],
+ "tutorial": {
+  "repeticao": {
+   "pasta": "ATIVIDADES/tutorial/repeticao",
+   "artes": [
+    {
+     "arquivo": "tut-rep-001-linha-de-transmissao.json",
+     "nome": "Linha de Transmissao"
+    },
+    {
+     "arquivo": "tut-rep-002-antena-vertical.json",
+     "nome": "Antena Vertical"
+    },
+    {
+     "arquivo": "tut-rep-003-casco-externo.json",
+     "nome": "Casco Externo"
+    },
+    {
+     "arquivo": "tut-rep-004-rota-diagonal.json",
+     "nome": "Rota Diagonal"
+    },
+    {
+     "arquivo": "tut-rep-005-listras-do-conves.json",
+     "nome": "Listras do Convés"
+    },
+    {
+     "arquivo": "tut-rep-006-grade-de-sensores.json",
+     "nome": "Grade de Sensores"
+    },
+    {
+     "arquivo": "tut-rep-007-escada-de-acesso.json",
+     "nome": "Escada de Acesso"
+    },
+    {
+     "arquivo": "tut-rep-008-bloco-de-carga.json",
+     "nome": "Bloco de Carga"
+    },
+    {
+     "arquivo": "tut-rep-009-leitura-de-energia.json",
+     "nome": "Leitura de Energia"
+    },
+    {
+     "arquivo": "tut-rep-010-sinal-alternado.json",
+     "nome": "Sinal Alternado"
+    },
+    {
+     "arquivo": "tut-rep-011-mira-central.json",
+     "nome": "Mira Central"
+    },
+    {
+     "arquivo": "tut-rep-012-molduras-encaixadas.json",
+     "nome": "Molduras Encaixadas"
+    }
+   ]
+  },
+  "condicao": {
+   "pasta": "ATIVIDADES/tutorial/condicao",
+   "artes": [
+    {
+     "arquivo": "tut-cond-001-malha-de-verificacao.json",
+     "nome": "Malha de Verificacao"
+    },
+    {
+     "arquivo": "tut-cond-002-divisao-de-setores.json",
+     "nome": "Divisao de Setores"
+    },
+    {
+     "arquivo": "tut-cond-003-rampa-de-lancamento.json",
+     "nome": "Rampa de Lancamento"
+    },
+    {
+     "arquivo": "tut-cond-004-planeta-solido.json",
+     "nome": "Planeta Solido"
+    },
+    {
+     "arquivo": "tut-cond-005-cristal-de-navegacao.json",
+     "nome": "Cristal de Navegacao"
+    },
+    {
+     "arquivo": "tut-cond-006-atmosfera-em-camadas.json",
+     "nome": "Atmosfera em Camadas"
+    },
+    {
+     "arquivo": "tut-cond-007-multiplos-de-tres.json",
+     "nome": "Multiplos de Tres"
+    },
+    {
+     "arquivo": "tut-cond-008-ampulheta-de-salto.json",
+     "nome": "Ampulheta de Salto"
+    },
+    {
+     "arquivo": "tut-cond-009-escotilha-reforcada.json",
+     "nome": "Escotilha Reforcada"
+    },
+    {
+     "arquivo": "tut-cond-010-quadrantes-do-conves.json",
+     "nome": "Quadrantes do Convés"
+    },
+    {
+     "arquivo": "tut-cond-011-anel-de-radar.json",
+     "nome": "Anel de Radar"
+    },
+    {
+     "arquivo": "tut-cond-012-leitura-do-proprio-traco.json",
+     "nome": "Leitura do Proprio Traco"
+    }
+   ]
+  },
+  "procedimento": {
+   "pasta": "ATIVIDADES/tutorial/procedimento",
+   "artes": [
+    {
+     "arquivo": "tut-proc-001-tres-transmissoes.json",
+     "nome": "Tres Transmissoes"
+    },
+    {
+     "arquivo": "tut-proc-002-marcadores-de-ancoragem.json",
+     "nome": "Marcadores de Ancoragem"
+    },
+    {
+     "arquivo": "tut-proc-003-chuva-de-pontos.json",
+     "nome": "Chuva de Pontos"
+    },
+    {
+     "arquivo": "tut-proc-004-duas-miras.json",
+     "nome": "Duas Miras"
+    },
+    {
+     "arquivo": "tut-proc-005-colunas-da-ponte.json",
+     "nome": "Colunas da Ponte"
+    },
+    {
+     "arquivo": "tut-proc-006-moldura-ajustavel.json",
+     "nome": "Moldura Ajustavel"
+    },
+    {
+     "arquivo": "tut-proc-007-frota-de-sondas.json",
+     "nome": "Frota de Sondas"
+    },
+    {
+     "arquivo": "tut-proc-008-escadas-paralelas.json",
+     "nome": "Escadas Paralelas"
+    },
+    {
+     "arquivo": "tut-proc-009-cor-calculada.json",
+     "nome": "Cor Calculada"
+    },
+    {
+     "arquivo": "tut-proc-010-triangulo-reutilizavel.json",
+     "nome": "Triangulo Reutilizavel"
+    },
+    {
+     "arquivo": "tut-proc-011-painel-de-barras.json",
+     "nome": "Painel de Barras"
+    },
+    {
+     "arquivo": "tut-proc-012-selo-dos-quatro-cantos.json",
+     "nome": "Selo dos Quatro Cantos"
+    }
+   ]
+  }
+ }
+}
