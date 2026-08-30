@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" shape-rendering="crispEdges" role="img" aria-label="Do Codigo ao Pixel">
+<title>Do Codigo ao Pixel</title>
+<rect width="32" height="32" fill="#080B08"/>
+<path d="M1 1h30v30H1z" fill="none" stroke="#C9CFC9" stroke-width="2"/>
+<path d="M3 29V3h26" fill="none" stroke="#F0F2F0" stroke-width="1"/>
+<path d="M29 3v26H3" fill="none" stroke="#6E766E" stroke-width="1"/>
+<g fill="#C9CFC9">
+<rect x="6" y="21" width="5" height="5"/>
+<rect x="11" y="21" width="5" height="5"/>
+<rect x="11" y="16" width="5" height="5"/>
+<rect x="16" y="16" width="5" height="5"/>
+<rect x="16" y="11" width="5" height="5"/>
+<rect x="21" y="11" width="5" height="5"/>
+</g>
+<path d="M21.5 6.5h4v4h-4z" fill="none" stroke="#3BFF9E" stroke-width="1.5"/>
+</svg>

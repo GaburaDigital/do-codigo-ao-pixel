@@ -1,0 +1,39 @@
+{
+  "name": "Do Codigo ao Pixel — Treinamento de Cadetes",
+  "short_name": "Codigo ao Pixel",
+  "description": "Treino de logica de programacao desenhando quadros em pixel art com codigo.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#050705",
+  "theme_color": "#050705",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "assets/icones/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/icones/icone-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icones/icone-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icones/icone-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

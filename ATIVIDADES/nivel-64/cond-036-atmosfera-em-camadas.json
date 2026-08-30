@@ -1,0 +1,1 @@
+{"id":"cond-036","nome":"Atmosfera em Camadas","categoria":"condicao","receita":"degraus-cor","largura":64,"altura":64,"par":14,"dica":"A cor depende de qual faixa de altura o cursor esta.","paleta":["transparente","#B07CFF","#5A8CFF","#4DE1FF"],"pintados":4096,"pixels":"1x512,2x512,3x512,1x512,2x512,3x512,1x512,2x512"}
