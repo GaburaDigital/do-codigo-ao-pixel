@@ -69,6 +69,10 @@ export const ICONES = {
     '<path d="M4.5 7 L8 10.5 L11.5 7" stroke="' + D + '" stroke-width="1.6"/>' +
     '<path d="M3 13 h10" stroke="' + C + '" stroke-width="1.6"/>'
   ),
+  voltar: () => svg(
+    '<path d="M13 8 H4" stroke="' + C + '" stroke-width="1.8"/>' +
+    '<path d="M7.5 4 L3.5 8 L7.5 12" stroke="' + D + '" stroke-width="1.8"/>'
+  ),
   fechar: () => svg(
     '<path d="M4 4 L12 12 M12 4 L4 12" stroke="' + C + '" stroke-width="1.8"/>'
   ),

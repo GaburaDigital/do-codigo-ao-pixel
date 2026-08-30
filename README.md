@@ -38,10 +38,10 @@ alienígena que ninguém a bordo terminou de decifrar.
 |---|---|
 | Modo Lógica Básica (artes sorteadas por assunto) | pronto |
 | Modo Desenho Livre (grid limpo, exporta PNG) | pronto |
+| Modo Tutorial de Lógica (código com erros para corrigir) | pronto |
+| Modo Desafio com Arte Importada | pronto |
 | Programação em blocos (Blockly com aparência do Scratch 3) | pronto |
-| Programação em Portugol | próxima atualização |
-| Modo Tutorial de Lógica (código com erros para corrigir) | próxima atualização |
-| Modo Desafio com Arte Importada | próxima atualização |
+| Programação em Portugol, com interpretador próprio | pronto |
 | Cronômetro com pausa, reinício e tempo infinito | pronto |
 | Três resoluções: 32x32, 64x64 e 128x128 | pronto |
 | Relatório em PNG com nome do aluno | pronto |
@@ -65,7 +65,8 @@ nenhum: as preferências e o progresso ficam apenas no navegador do aluno.
    grid e pinta.
 4. O medidor de conclusão mostra quanto da arte foi reproduzido corretamente.
    - Com **75% ou mais**, o botão **Passar arte** libera.
-   - Ao chegar a **100%**, a arte é concluída sozinha e vale o dobro de pontos.
+   - A arte só é dada como concluída quando cobre **100%** do alvo **e** não
+     sobra nenhum pixel pintado fora do lugar. Concluir vale o dobro de pontos.
 5. A cada arte concluída ou passada, o programa é apagado e uma arte nova é
    sorteada.
 6. Quando o tempo acaba, ou ao clicar em **Parar**, aparece o relatório com a
@@ -147,7 +148,7 @@ do-codigo-ao-pixel/
 │   ├── nivel-32/               150 artes 32x32
 │   ├── nivel-64/               150 artes 64x64
 │   ├── nivel-128/              150 artes 128x128
-│   └── tutorial/               artes do modo Tutorial (próxima atualização)
+│   └── tutorial/               36 exercícios do modo Tutorial
 │       ├── repeticao/
 │       ├── condicao/
 │       └── procedimento/
@@ -162,7 +163,8 @@ do-codigo-ao-pixel/
 │   ├── grid/                   modelo do grid e desenho no canvas
 │   ├── exec/                   biblioteca pixel, executor, animação
 │   ├── blocos/                 blocos do Blockly e geradores de código
-│   ├── modos/                  descrição de cada modo de treino
+│   ├── portugol/               lexer, parser, interpretador e conversor
+│   ├── modos/                  descrição de cada modo e importação de imagens
 │   └── ui/                     ícones, som, boot, NOVA-7, ajustes, relatório
 ├── ferramentas/                scripts de manutenção (rodam no Node)
 └── vendor/blockly/             Blockly embutido, para funcionar offline
@@ -225,12 +227,26 @@ node ferramentas/gerar-artes.mjs --limpar          # apaga as antigas antes
 # Regera os PNG do PWA a partir da definição do favicon
 node ferramentas/gerar-icones.mjs
 
+# Gera os 36 exercícios do modo Tutorial a partir de ferramentas/exercicios.mjs
+node ferramentas/gerar-tutoriais.mjs
+
 # Verifica o motor: reproduz todas as artes e testa os erros de execução
 node ferramentas/testar-motor.mjs
 
+# Verifica o interpretador de Portugol
+node ferramentas/testar-portugol.mjs
+
 # Verifica os blocos (precisa de: npm install blockly)
 node ferramentas/testar-blocos.mjs
+
+# Verifica os tutoriais nas duas linguagens (precisa de: npm install blockly)
+node ferramentas/testar-tutoriais.mjs
 ```
+
+Para criar exercícios de Tutorial novos, acrescente uma entrada em
+`ferramentas/exercicios.mjs` com o programa correto em Portugol e a lista de
+`mutacoes` (pares de texto a trocar para introduzir o erro). Rode
+`gerar-tutoriais.mjs` e depois `atualizar-catalogo.mjs`.
 
 O gerador de artes tem 41 receitas divididas por assunto. Para criar receitas
 novas, acrescente uma entrada em `RECEITAS` dentro de
@@ -301,16 +317,56 @@ sem rastreadores. O Blockly está embutido em `vendor/`.
 
 ---
 
+## Os quatro modos
+
+**Lógica Básica.** Artes sorteadas do catálogo conforme o assunto escolhido:
+generalistas, repetições, condições ou procedimentos. É o treino principal.
+
+**Tutorial de Lógica.** O programa já vem montado, mas com erros plantados. O
+aluno lê, encontra o defeito e completa o desenho. Cada exercício tem um botão
+**Mostrar resposta**: ao usar, a solução aparece no editor e a arte deixa de
+valer pontos. São 36 exercícios, 12 por assunto, disponíveis nas duas
+linguagens.
+
+**Desenho Livre.** Grid limpo, sem alvo, sem cronômetro e sem correção. Serve
+para experimentar e para o aluno criar a própria arte, que pode ser baixada em
+PNG.
+
+**Desafio com Arte Importada.** O aluno envia as próprias imagens. Cada uma é
+reduzida para a resolução do treino por vizinho mais próximo e limitada a 16
+cores pelo método do corte mediano, virando uma arte alvo normal.
+
+---
+
+## As duas linguagens
+
+O aluno escolhe entre **blocos** e **Portugol** na tela de configuração. As duas
+usam exatamente a mesma biblioteca `pixel` por baixo, então o mesmo raciocínio
+produz o mesmo desenho.
+
+O Portugol é interpretado por um analisador próprio escrito para o projeto, em
+`js/portugol/`. Ele cobre: `programa` e `funcao`, os tipos `inteiro`, `real`,
+`logico`, `cadeia` e `caracter`, vetores e matrizes, `se`/`senao`,
+`enquanto`, `para`, `faca...enquanto`, `pare`, `retorne`, funções com e sem
+retorno, e as bibliotecas `pixel` e `matematica`. Erros de sintaxe são
+apontados com o número da linha e o programa não roda até estarem corrigidos.
+
+Dentro do treino, o botão de documentação abre a lista completa dos comandos da
+biblioteca com exemplos de cada estrutura da linguagem.
+
+Um detalhe de implementação que vale registrar: os exercícios do Tutorial são
+escritos **uma vez só**, em Portugol. A ferramenta `gerar-tutoriais.mjs` executa
+o programa correto para produzir a arte alvo, converte a árvore sintática em
+blocos do Blockly e aplica as trocas declaradas para gerar a versão com erros.
+Isso garante que as duas linguagens nunca fiquem fora de sincronia.
+
+---
+
 ## Roteiro
 
-**Fase 2**
-
-- Editor em Portugol, com interpretador próprio e documentação da biblioteca
-  `pixel` dentro da aplicação.
-- Modo Tutorial de Lógica: código pela metade, com erros plantados, e botão de
-  mostrar a resposta (que zera os pontos da arte).
-- Modo Desafio com Arte Importada: envio de imagens do próprio aluno, com
-  redimensionamento por vizinho mais próximo e redução para até 16 cores.
+Não há funcionalidades pendentes. Ideias guardadas para o futuro: sinal de
+anomalia com pontuação dobrada, desafio diário com semente pela data, exportar
+o desenho como GIF animado e replay fantasma da melhor tentativa.
 
 ---
 

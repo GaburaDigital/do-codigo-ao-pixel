@@ -44,6 +44,45 @@ export function sortearEntrada(tamanho, foco) {
   return escolhida;
 }
 
+/* ------------------------------------------------------------- tutorial */
+
+export function listarTutoriais(foco = 'geral') {
+  if (!catalogo || !catalogo.tutorial) return [];
+  const grupos = foco && foco !== 'geral'
+    ? [[foco, catalogo.tutorial[foco]]]
+    : Object.entries(catalogo.tutorial);
+  const saida = [];
+  for (const [categoria, grupo] of grupos) {
+    if (!grupo) continue;
+    for (const a of grupo.artes) saida.push({ ...a, categoria, pasta: grupo.pasta });
+  }
+  return saida;
+}
+
+export async function carregarTutorial(entrada) {
+  const caminho = entrada.pasta + '/' + entrada.arquivo;
+  const resposta = await fetch(caminho, { cache: 'force-cache' });
+  if (!resposta.ok) throw new Error('Tutorial nao encontrado: ' + caminho);
+  const dados = await resposta.json();
+  const arte = prepararArte(dados, caminho);
+  arte.tutorial = true;
+  arte.codigoInicial = dados.codigoInicial;
+  arte.solucao = dados.solucao;
+  return arte;
+}
+
+/* Sorteia um tutorial ainda nao visto nesta sessao. */
+const tutoriaisVistos = new Set();
+export async function sortearTutorial(foco) {
+  const lista = listarTutoriais(foco);
+  if (!lista.length) throw new Error('Nenhum tutorial disponivel.');
+  let pool = lista.filter((a) => !tutoriaisVistos.has(a.pasta + '/' + a.arquivo));
+  if (!pool.length) { tutoriaisVistos.clear(); pool = lista; }
+  const escolhida = pool[Math.floor(Math.random() * pool.length)];
+  tutoriaisVistos.add(escolhida.pasta + '/' + escolhida.arquivo);
+  return carregarTutorial(escolhida);
+}
+
 export async function carregarArte(entrada) {
   const caminho = entrada.pasta + '/' + entrada.arquivo;
   if (cacheArtes.has(caminho)) return cacheArtes.get(caminho);

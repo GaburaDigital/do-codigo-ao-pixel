@@ -18,6 +18,7 @@ export class RenderGrid {
     this.ctxSobre = this.cvSobre.getContext('2d');
     this.modelo = null;
     this.mostrarAlvo = true;
+    this.marcarErros = true;
     this.ladoTela = 512;
   }
 
@@ -131,7 +132,9 @@ export class RenderGrid {
     ctx.stroke();
 
     // X preto no centro dos pixels com a cor errada.
+    // No Desenho Livre nao existe gabarito, entao nada e marcado como erro.
     const m = this.modelo;
+    if (this.marcarErros) {
     ctx.strokeStyle = corErro;
     ctx.lineWidth = Math.max(1, cel * 0.14);
     ctx.beginPath();
@@ -146,6 +149,7 @@ export class RenderGrid {
       ctx.lineTo(x + margem, y + cel - margem);
     }
     ctx.stroke();
+    }
 
     // Cursor: contorno quadrado na posicao atual.
     const cx = m.x * cel;

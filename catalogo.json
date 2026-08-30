@@ -1852,15 +1852,162 @@
  "tutorial": {
   "repeticao": {
    "pasta": "ATIVIDADES/tutorial/repeticao",
-   "artes": []
+   "artes": [
+    {
+     "arquivo": "tut-rep-001-linha-de-transmissao.json",
+     "nome": "Linha de Transmissao"
+    },
+    {
+     "arquivo": "tut-rep-002-antena-vertical.json",
+     "nome": "Antena Vertical"
+    },
+    {
+     "arquivo": "tut-rep-003-casco-externo.json",
+     "nome": "Casco Externo"
+    },
+    {
+     "arquivo": "tut-rep-004-rota-diagonal.json",
+     "nome": "Rota Diagonal"
+    },
+    {
+     "arquivo": "tut-rep-005-listras-do-conves.json",
+     "nome": "Listras do Convés"
+    },
+    {
+     "arquivo": "tut-rep-006-grade-de-sensores.json",
+     "nome": "Grade de Sensores"
+    },
+    {
+     "arquivo": "tut-rep-007-escada-de-acesso.json",
+     "nome": "Escada de Acesso"
+    },
+    {
+     "arquivo": "tut-rep-008-bloco-de-carga.json",
+     "nome": "Bloco de Carga"
+    },
+    {
+     "arquivo": "tut-rep-009-leitura-de-energia.json",
+     "nome": "Leitura de Energia"
+    },
+    {
+     "arquivo": "tut-rep-010-sinal-alternado.json",
+     "nome": "Sinal Alternado"
+    },
+    {
+     "arquivo": "tut-rep-011-mira-central.json",
+     "nome": "Mira Central"
+    },
+    {
+     "arquivo": "tut-rep-012-molduras-encaixadas.json",
+     "nome": "Molduras Encaixadas"
+    }
+   ]
   },
   "condicao": {
    "pasta": "ATIVIDADES/tutorial/condicao",
-   "artes": []
+   "artes": [
+    {
+     "arquivo": "tut-cond-001-malha-de-verificacao.json",
+     "nome": "Malha de Verificacao"
+    },
+    {
+     "arquivo": "tut-cond-002-divisao-de-setores.json",
+     "nome": "Divisao de Setores"
+    },
+    {
+     "arquivo": "tut-cond-003-rampa-de-lancamento.json",
+     "nome": "Rampa de Lancamento"
+    },
+    {
+     "arquivo": "tut-cond-004-planeta-solido.json",
+     "nome": "Planeta Solido"
+    },
+    {
+     "arquivo": "tut-cond-005-cristal-de-navegacao.json",
+     "nome": "Cristal de Navegacao"
+    },
+    {
+     "arquivo": "tut-cond-006-atmosfera-em-camadas.json",
+     "nome": "Atmosfera em Camadas"
+    },
+    {
+     "arquivo": "tut-cond-007-multiplos-de-tres.json",
+     "nome": "Multiplos de Tres"
+    },
+    {
+     "arquivo": "tut-cond-008-ampulheta-de-salto.json",
+     "nome": "Ampulheta de Salto"
+    },
+    {
+     "arquivo": "tut-cond-009-escotilha-reforcada.json",
+     "nome": "Escotilha Reforcada"
+    },
+    {
+     "arquivo": "tut-cond-010-quadrantes-do-conves.json",
+     "nome": "Quadrantes do Convés"
+    },
+    {
+     "arquivo": "tut-cond-011-anel-de-radar.json",
+     "nome": "Anel de Radar"
+    },
+    {
+     "arquivo": "tut-cond-012-leitura-do-proprio-traco.json",
+     "nome": "Leitura do Proprio Traco"
+    }
+   ]
   },
   "procedimento": {
    "pasta": "ATIVIDADES/tutorial/procedimento",
-   "artes": []
+   "artes": [
+    {
+     "arquivo": "tut-proc-001-tres-transmissoes.json",
+     "nome": "Tres Transmissoes"
+    },
+    {
+     "arquivo": "tut-proc-002-marcadores-de-ancoragem.json",
+     "nome": "Marcadores de Ancoragem"
+    },
+    {
+     "arquivo": "tut-proc-003-chuva-de-pontos.json",
+     "nome": "Chuva de Pontos"
+    },
+    {
+     "arquivo": "tut-proc-004-duas-miras.json",
+     "nome": "Duas Miras"
+    },
+    {
+     "arquivo": "tut-proc-005-colunas-da-ponte.json",
+     "nome": "Colunas da Ponte"
+    },
+    {
+     "arquivo": "tut-proc-006-moldura-ajustavel.json",
+     "nome": "Moldura Ajustavel"
+    },
+    {
+     "arquivo": "tut-proc-007-frota-de-sondas.json",
+     "nome": "Frota de Sondas"
+    },
+    {
+     "arquivo": "tut-proc-008-escadas-paralelas.json",
+     "nome": "Escadas Paralelas"
+    },
+    {
+     "arquivo": "tut-proc-009-cor-calculada.json",
+     "nome": "Cor Calculada"
+    },
+    {
+     "arquivo": "tut-proc-010-triangulo-reutilizavel.json",
+     "nome": "Triangulo Reutilizavel"
+    },
+    {
+     "arquivo": "tut-proc-011-painel-de-barras.json",
+     "nome": "Painel de Barras"
+    },
+    {
+     "arquivo": "tut-proc-012-selo-dos-quatro-cantos.json",
+     "nome": "Selo dos Quatro Cantos"
+    }
+   ]
   }
  }
 }

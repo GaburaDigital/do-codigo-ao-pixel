@@ -30,12 +30,27 @@ export const MODOS = {
   tutorial: {
     id: 'tutorial',
     rotulo: 'Tutorial de Logica',
-    disponivel: false,
+    comAlvo: true,
+    comCronometro: true,
+    comPontos: true,
+    podePassar: true,
+    podeBaixar: false,
+    usaFoco: true,
+    permiteInfinito: true,
+    codigoPronto: true,     // o programa ja vem montado, com erros
+    temResposta: true,      // existe o botao de mostrar a solucao
   },
   importada: {
     id: 'importada',
     rotulo: 'Arte Importada',
-    disponivel: false,
+    comAlvo: true,
+    comCronometro: true,
+    comPontos: true,
+    podePassar: true,
+    podeBaixar: true,
+    usaFoco: false,
+    permiteInfinito: true,
+    precisaImagens: true,
   },
 };
 

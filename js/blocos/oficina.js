@@ -163,6 +163,10 @@ function construirToolbox() {
             inputs: { NUM: sombraNumero(9) },
           },
           {
+            kind: 'block', type: 'math_round',
+            inputs: { NUM: sombraNumero(3.1) },
+          },
+          {
             kind: 'block', type: 'logic_compare',
             inputs: { A: sombraNumero(0), B: sombraNumero(0) },
           },

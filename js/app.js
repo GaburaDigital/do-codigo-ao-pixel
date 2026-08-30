@@ -7,7 +7,10 @@ import {
   prefs, salvarPrefs, aplicarTema, progresso, salvarProgresso,
   sessao, zerarSessao,
 } from './nucleo/estado.js';
-import { carregarCatalogo, sortearArte, arteVazia, listarArtes, inteiroParaHex } from './nucleo/catalogo.js';
+import {
+  carregarCatalogo, sortearArte, arteVazia, listarArtes, inteiroParaHex,
+  sortearTutorial, listarTutoriais, prepararArte,
+} from './nucleo/catalogo.js';
 import { Cronometro } from './nucleo/cronometro.js';
 import {
   calcularPontos, patenteDe, avaliarInsignias, sortearGlifoNovo,
@@ -27,6 +30,10 @@ import {
 } from './ui/ajustes.js';
 import { baixarCartao } from './ui/relatorio.js';
 import { modo as descritorModo } from './modos/modos.js';
+import { interpretar } from './portugol/interpretador.js';
+import { MODELO_INICIAL, montarDocumentacao } from './portugol/documentacao.js';
+import { lerImagem, converter, miniatura } from './modos/importada.js';
+import { Runtime } from './exec/api-pixel.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -38,6 +45,9 @@ let oficinaPronta = false;
 let modoAtual = descritorModo(prefs.modo);
 let observadorTamanho = null;
 let jaExecutouNaArte = false;
+let artesImportadas = [];
+let filaImportadas = [];
+let respostaRevelada = false;
 
 /* ====================================================== inicializacao */
 
@@ -65,8 +75,21 @@ rodarBoot(async () => {
 /* ====================================================== configuracao */
 
 function atualizarResumoCatalogo() {
+  const el = $('resumo-catalogo');
+  el.className = 'texto-mini texto-suave';
+  if (modoAtual.id === 'tutorial') {
+    el.textContent = listarTutoriais('geral').length + ' exercicios de tutorial disponiveis.';
+    return;
+  }
+  if (modoAtual.precisaImagens) {
+    el.textContent = artesImportadas.length
+      ? artesImportadas.length + ' imagem(ns) prontas para o treino.'
+      : 'Envie ao menos uma imagem para comecar.';
+    return;
+  }
+  if (modoAtual.id === 'livre') { el.textContent = 'Grid limpo, sem alvo e sem cronometro.'; return; }
   const total = [32, 64, 128].reduce((s, t) => s + listarArtes(t, 'geral').length, 0);
-  $('resumo-catalogo').textContent = total + ' artes disponiveis no catalogo.';
+  el.textContent = total + ' artes disponiveis no catalogo.';
 }
 
 function prepararConfiguracao() {
@@ -106,6 +129,12 @@ function prepararConfiguracao() {
     });
   });
 
+  document.querySelectorAll('[data-linguagem]').forEach((b) =>
+    b.setAttribute('aria-pressed', String(b.dataset.linguagem === prefs.linguagem)));
+
+  $('btn-escolher-imagens').addEventListener('click', () => $('inp-imagens').click());
+  $('inp-imagens').addEventListener('change', receberImagens);
+
   $('btn-iniciar').addEventListener('click', () => { despertarAudio(); iniciarTreino(); });
   refletirModoNaConfig();
 }
@@ -113,6 +142,73 @@ function prepararConfiguracao() {
 function refletirModoNaConfig() {
   $('grupo-foco').style.display = modoAtual.usaFoco ? '' : 'none';
   $('grupo-tempo').style.display = modoAtual.comCronometro ? '' : 'none';
+  $('grupo-importar').classList.toggle('oculto', !modoAtual.precisaImagens);
+  atualizarResumoCatalogo();
+}
+
+/* --------------------------------------------------- imagens do aluno */
+
+async function receberImagens(evento) {
+  const arquivos = [...evento.target.files];
+  evento.target.value = '';
+  if (!arquivos.length) return;
+
+  const resumo = $('resumo-importadas');
+  resumo.textContent = 'Convertendo ' + arquivos.length + ' imagem(ns)...';
+  resumo.className = 'texto-mini texto-suave';
+
+  const novas = [];
+  const erros = [];
+  for (const arquivo of arquivos) {
+    try {
+      const img = await lerImagem(arquivo);
+      novas.push(prepararArte(converter(img, prefs.tamanho, arquivo.name)));
+    } catch (e) {
+      erros.push(e.message);
+    }
+  }
+  artesImportadas = [...artesImportadas, ...novas];
+
+  const tira = $('tira-importadas');
+  tira.innerHTML = '';
+  artesImportadas.forEach((arte) => {
+    const cartao = document.createElement('figure');
+    cartao.style.cssText = 'margin:0;text-align:center;width:64px';
+    cartao.innerHTML =
+      '<img src="' + miniatura({
+        largura: arte.largura, altura: arte.altura,
+        paleta: arte.paletaHex, pixels: recomprimir(arte),
+      }, 56) + '" width="56" height="56" alt="' + arte.nome +
+      '" style="image-rendering:pixelated;border:1px solid var(--linha-forte);background:var(--painel-fundo)">' +
+      '<figcaption class="texto-mini texto-suave" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' +
+      arte.nome + '</figcaption>';
+    tira.appendChild(cartao);
+  });
+
+  resumo.textContent = artesImportadas.length + ' imagem(ns) prontas.' +
+    (erros.length ? ' ' + erros.length + ' falharam.' : '');
+  resumo.className = 'texto-mini ' + (artesImportadas.length ? 'texto-verde' : 'texto-vermelho');
+  if (erros.length) mostrarErro(erros.join(' '));
+  tocar(artesImportadas.length ? 'acerto' : 'erro');
+}
+
+/* Reconstroi o RLE a partir da arte ja decodificada, para a miniatura. */
+function recomprimir(arte) {
+  const indice = new Map();
+  arte.paletaHex.forEach((c, i) => {
+    if (c === 'transparente') return;
+    const v = parseInt(c.slice(1), 16);
+    indice.set(v, i);
+  });
+  const partes = [];
+  let atual = null, cont = 0;
+  for (let i = 0; i < arte.alvo.length; i++) {
+    const v = arte.alvo[i] === -1 ? 0 : (indice.get(arte.alvo[i]) ?? 0);
+    if (v === atual) cont++;
+    else { if (atual !== null) partes.push(atual + 'x' + cont); atual = v; cont = 1; }
+  }
+  partes.push(atual + 'x' + cont);
+  return partes.join(',');
 }
 
 /* ========================================================= cabecalho */
@@ -162,15 +258,38 @@ function prepararTreino() {
         nova('tempoAcabando');
       }
     },
-    aoTerminar: () => { tocar('fim'); pararTreino(); },
+    aoTerminar: () => { tocar('fim'); pararTreino({ porTempo: true }); },
   });
 
   $('btn-rodar').addEventListener('click', () => rodar(false));
   $('btn-lento').addEventListener('click', () => rodar(true));
   $('btn-limpar-codigo').addEventListener('click', () => {
-    oficina.limparBlocos();
+    limparCodigo();
     atualizarSeloBlocos();
     tocar('clique');
+  });
+  $('btn-resposta').addEventListener('click', mostrarResposta);
+  $('btn-docs').addEventListener('click', () => {
+    $('corpo-docs').innerHTML = montarDocumentacao();
+    abrirModal('modal-docs');
+  });
+  $('btn-voltar-codigo').addEventListener('click', () => trocarAba('codigo'));
+  $('portugol-editor').addEventListener('input', () => {
+    // A contagem so vale depois de executar; aqui apenas limpamos o aviso.
+    limparErro();
+  });
+  $('portugol-editor').addEventListener('keydown', (ev) => {
+    if (ev.key !== 'Tab') return;
+    ev.preventDefault();
+    const alvo = ev.target;
+    const inicio = alvo.selectionStart;
+    alvo.value = alvo.value.slice(0, inicio) + '  ' + alvo.value.slice(alvo.selectionEnd);
+    alvo.selectionStart = alvo.selectionEnd = inicio + 2;
+  });
+  $('btn-ver-relatorio').addEventListener('click', () => {
+    fecharModal('modal-tempo');
+    montarRelatorio();
+    abrirModal('modal-relatorio');
   });
   $('btn-pausar').addEventListener('click', alternarPausa);
   $('btn-reiniciar').addEventListener('click', () => {
@@ -203,6 +322,15 @@ function prepararTreino() {
 
 async function iniciarTreino() {
   modoAtual = descritorModo(prefs.modo);
+
+  if (modoAtual.precisaImagens && !artesImportadas.length) {
+    $('resumo-catalogo').textContent = 'Envie ao menos uma imagem antes de iniciar.';
+    $('resumo-catalogo').className = 'texto-mini texto-vermelho';
+    tocar('erro');
+    return;
+  }
+  filaImportadas = artesImportadas.slice();
+
   salvarPrefs();
   zerarSessao();
   sessao.emTreino = true;
@@ -216,6 +344,9 @@ async function iniciarTreino() {
   $('btn-pausar').classList.toggle('oculto', !modoAtual.comCronometro);
   $('btn-reiniciar').classList.toggle('oculto', !modoAtual.comCronometro);
   $('bloco-eficiencia').style.display = modoAtual.comPontos ? '' : 'none';
+  $('btn-resposta').classList.toggle('oculto', !modoAtual.temResposta);
+  $('btn-docs').classList.toggle('oculto', prefs.linguagem !== 'portugol');
+  aplicarLinguagem();
 
   if (!oficinaPronta) {
     oficina.criarOficina('blockly-div');
@@ -258,18 +389,26 @@ async function iniciarTreino() {
 async function proximaArte() {
   limparErro();
   jaExecutouNaArte = false;
-  oficina.limparBlocos();
+  respostaRevelada = false;
+  limparCodigo();
+  $('btn-resposta').disabled = false;
 
   let arte;
-  if (modoAtual.comAlvo) {
-    try {
+  try {
+    if (modoAtual.id === 'tutorial') {
+      arte = await sortearTutorial(prefs.foco);
+    } else if (modoAtual.precisaImagens) {
+      if (!filaImportadas.length) filaImportadas = artesImportadas.slice();
+      const i = Math.floor(Math.random() * filaImportadas.length);
+      arte = filaImportadas.splice(i, 1)[0];
+    } else if (modoAtual.comAlvo) {
       arte = await sortearArte(prefs.tamanho, modoAtual.usaFoco ? prefs.foco : 'geral');
-    } catch (e) {
-      mostrarErro('Nao consegui carregar a arte: ' + e.message);
-      return;
+    } else {
+      arte = arteVazia(prefs.tamanho);
     }
-  } else {
-    arte = arteVazia(prefs.tamanho);
+  } catch (e) {
+    mostrarErro('Nao consegui carregar a arte: ' + e.message);
+    return;
   }
 
   sessao.arteAtual = arte;
@@ -283,6 +422,12 @@ async function proximaArte() {
   $('nome-arte').textContent = modoAtual.comAlvo
     ? arte.nome + '  ·  ' + arte.largura + 'x' + arte.altura
     : 'Tela livre  ·  ' + arte.largura + 'x' + arte.altura;
+
+  render.marcarErros = modoAtual.comAlvo;
+
+  if (modoAtual.codigoPronto && arte.codigoInicial) {
+    carregarCodigo(arte.codigoInicial);
+  }
 
   montarPaleta(arte);
   atualizarConclusao();
@@ -304,9 +449,12 @@ function montarPaleta(arte) {
     const amostra = document.createElement('span');
     amostra.className = 'selo';
     amostra.style.gap = '6px';
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
     amostra.innerHTML =
       '<span style="width:12px;height:12px;display:inline-block;background:' + hex +
-      ';border:1px solid var(--linha-forte)"></span>' + hex;
+      ';border:1px solid var(--linha-forte)"></span>' +
+      (prefs.linguagem === 'portugol' ? 'pixel.cor(' + r + ', ' + g + ', ' + b + ')' : hex);
+    amostra.title = hex + '  ·  R ' + r + '  G ' + g + '  B ' + b;
     caixa.appendChild(amostra);
   }
   if (arte.dica) {
@@ -320,14 +468,23 @@ function montarPaleta(arte) {
 
 /* --------------------------------------------------------- execucao */
 
+/* Mede o tamanho do programa na linguagem em uso. As duas contagens sao
+   trazidas para a mesma escala, senao o Portugol seria injustamente punido. */
+function medirCodigo() {
+  if (prefs.linguagem === 'portugol') {
+    return { blocos: ultimaMedidaPortugol, usouRepeticao: true, pintarSolto: false, usouProcedimento: false };
+  }
+  return oficina.metricas();
+}
+
+let ultimaMedidaPortugol = 0;
+
 function rodar(lento) {
   if (!sessao.emTreino || sessao.pausado) return;
   limparErro();
 
-  const codigo = oficina.gerarCodigo();
-  const met = oficina.metricas();
-
-  const resultado = executar(codigo, modelo, { limparAntes: true });
+  const resultado = prefs.linguagem === 'portugol' ? rodarPortugol() : rodarBlocos();
+  const met = medirCodigo();
 
   if (!resultado.ok) {
     render.redesenhar();
@@ -345,10 +502,11 @@ function rodar(lento) {
   jaExecutouNaArte = true;
 
   const aoFim = () => {
+    atualizarSeloBlocos();
     atualizarConclusao();
     espelhar();
     comentarExecucao(met);
-    if (modoAtual.comAlvo && modelo.percentual() >= 100) {
+    if (modoAtual.comAlvo && modelo.completa()) {
       setTimeout(() => concluirArte(true), 320);
     }
   };
@@ -365,6 +523,74 @@ function rodar(lento) {
   }
 }
 
+/* --------------------------------------------------- as duas linguagens */
+
+function rodarBlocos() {
+  const codigo = oficina.gerarCodigo();
+  return executar(codigo, modelo, { limparAntes: true });
+}
+
+function rodarPortugol() {
+  const fonte = $('portugol-editor').value;
+  if (!fonte.trim()) {
+    return { ok: false, erro: 'PROGRAMA VAZIO. Escreva o codigo antes de executar.', tipo: 'vazio' };
+  }
+  const anterior = modelo.pintado.slice();
+  const x0 = modelo.x, y0 = modelo.y;
+
+  const runtime = new Runtime(modelo, { limparAntes: true });
+  runtime.comecar();
+  const r = interpretar(fonte, runtime);
+  ultimaMedidaPortugol = Math.max(1, Math.round((r.instrucoes || 0) / 1.7));
+
+  if (!r.ok) {
+    modelo.pintado.set(anterior);
+    modelo.x = x0; modelo.y = y0;
+    modelo.recontar();
+    return { ok: false, erro: r.erro, tipo: r.tipo };
+  }
+  modelo.recontar();
+  return { ok: true, runtime, trilha: runtime.trilha };
+}
+
+function aplicarLinguagem() {
+  const portugol = prefs.linguagem === 'portugol';
+  $('blockly-area').classList.toggle('oculto', portugol);
+  $('portugol-area').classList.toggle('oculto', !portugol);
+  $('btn-docs').classList.toggle('oculto', !portugol);
+  if (!portugol) oficina.redimensionar();
+}
+
+function limparCodigo() {
+  oficina.limparBlocos();
+  $('portugol-editor').value = MODELO_INICIAL;
+  ultimaMedidaPortugol = 0;
+}
+
+function carregarCodigo(pacote) {
+  if (!pacote) return;
+  if (pacote.portugol) $('portugol-editor').value = pacote.portugol;
+  if (pacote.blocos) {
+    oficina.limparBlocos();
+    try { oficina.restaurar(pacote.blocos); } catch (e) { /* mantem vazio */ }
+  }
+  atualizarSeloBlocos();
+}
+
+function mostrarResposta() {
+  const arte = sessao.arteAtual;
+  if (!arte || !arte.solucao) return;
+  const certeza = window.confirm(
+    'Ao ver a resposta voce nao ganha pontos por esta arte. Quer continuar?'
+  );
+  if (!certeza) return;
+  respostaRevelada = true;
+  $('btn-resposta').disabled = true;
+  carregarCodigo(arte.solucao);
+  novaLivre('Solucao carregada. Leia com calma, execute e veja como as pecas se encaixam. Esta arte nao vale pontos.');
+  tocar('aviso');
+}
+
 function comentarExecucao(met) {
   const arte = sessao.arteAtual;
   const pct = Math.round(modelo.percentual());
@@ -377,8 +603,13 @@ function comentarExecucao(met) {
 
   if (!modoAtual.comAlvo) { novaLivre('Transmissao aplicada. ' + met.blocos + ' blocos usados.'); return; }
 
-  if (modelo.erros > 0 && pct < 100) { nova('comErro', { e: modelo.erros }); return; }
-  if (pct >= 100) return;                       // a fala de conclusao vem depois
+  if (pct >= 100 && modelo.erros > 0) {
+    novaLivre('Cobertura completa, mas ha ' + modelo.erros +
+      ' pixel(s) pintados fora do lugar. Apague eles para fechar a transmissao.');
+    return;
+  }
+  if (modelo.erros > 0) { nova('comErro', { e: modelo.erros }); return; }
+  if (modelo.completa()) return;                // a fala de conclusao vem depois
   if (met.blocos > arte.par * 2.5) { nova('muitosBlocos', { n: met.blocos, par: arte.par }); return; }
   if (efic >= 80) { nova('eficiente', { n: met.blocos }); return; }
   if (pct < 30) nova('progressoBaixo', { p: pct });
@@ -403,21 +634,26 @@ function atualizarConclusao() {
 
 function atualizarSeloBlocos() {
   if (!oficinaPronta) return;
-  const met = oficina.metricas();
+  const portugol = prefs.linguagem === 'portugol';
+  const met = medirCodigo();
   const par = sessao.arteAtual ? sessao.arteAtual.par : 0;
-  $('selo-blocos').textContent = met.blocos + ' blocos' + (par ? '  /  ideal ' + par : '');
-  $('selo-blocos').className = 'selo' + (par && met.blocos <= par ? ' selo-verde' : '');
+  const unidade = portugol ? ' instrucoes' : ' blocos';
+  $('selo-blocos').textContent = met.blocos + unidade + (par ? '  /  ideal ' + par : '');
+  $('selo-blocos').className = 'selo' + (par && met.blocos && met.blocos <= par ? ' selo-verde' : '');
 }
 
 /* ----------------------------------------------------- conclusao */
 
 function concluirArte(completa) {
+  if (!sessao.emTreino || !sessao.arteAtual) return;
   const arte = sessao.arteAtual;
   const met = oficina.metricas();
   const segundos = Math.max(1, Math.round((performance.now() - sessao.inicioArte) / 1000));
   const pct = modelo.percentual();
 
-  const nota = calcularPontos({
+  const nota = respostaRevelada
+    ? { total: 0, eficiencia: 0 }
+    : calcularPontos({
     tamanho: arte.largura,
     percentual: pct,
     completa,
@@ -503,13 +739,23 @@ function alternarPausa() {
 
 /* -------------------------------------------------------- encerramento */
 
-function pararTreino() {
+function pararTreino(opcoes = {}) {
   if (!sessao.emTreino) return;
   sessao.emTreino = false;
   cronometro.parar();
   if (reprodutor) reprodutor.cancelar();
 
   if (!modoAtual.comPontos) { voltarParaConfiguracao(); return; }
+
+  if (opcoes.porTempo) {
+    // Aviso claro antes do relatorio, para ninguem ser pego de surpresa.
+    $('texto-tempo').textContent =
+      'O cronometro da missao chegou ao fim. Voce fez ' + sessao.pontos +
+      ' ponto(s) em ' + (sessao.artesFeitas + sessao.artesPassadas) + ' arte(s).';
+    abrirModal('modal-tempo');
+    return;
+  }
+
   montarRelatorio();
   abrirModal('modal-relatorio');
   tocar('fim');

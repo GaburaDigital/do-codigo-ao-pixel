@@ -108,13 +108,13 @@
                 <span class="cm-topo" data-icone="codigo" data-icone-tam="18"><span class="cm-titulo">Desenho Livre</span></span>
                 <span class="cm-desc">Grid limpo, sem alvo e sem cronometro. Desenhe o que quiser e baixe o resultado.</span>
               </button>
-              <button type="button" class="cartao-modo" data-modo="tutorial" aria-pressed="false" disabled>
+              <button type="button" class="cartao-modo" data-modo="tutorial" aria-pressed="false">
                 <span class="cm-topo" data-icone="ajuda" data-icone-tam="18"><span class="cm-titulo">Tutorial de Logica</span></span>
-                <span class="cm-desc">Codigo pela metade, com erros para corrigir. Chega na proxima atualizacao.</span>
+                <span class="cm-desc">O codigo ja vem pela metade e com erros plantados. Conserte e complete o desenho.</span>
               </button>
-              <button type="button" class="cartao-modo" data-modo="importada" aria-pressed="false" disabled>
-                <span class="cm-topo" data-icone="baixar" data-icone-tam="18"><span class="cm-titulo">Arte Importada</span></span>
-                <span class="cm-desc">Traga suas proprias imagens em pixel art. Chega na proxima atualizacao.</span>
+              <button type="button" class="cartao-modo" data-modo="importada" aria-pressed="false">
+                <span class="cm-topo" data-icone="enviar" data-icone-tam="18"><span class="cm-titulo">Desafio com Arte Importada</span></span>
+                <span class="cm-desc">Envie suas proprias imagens. O sistema converte para a resolucao do treino.</span>
               </button>
             </div>
           </div>
@@ -162,11 +162,25 @@
                 <span class="campo-rotulo">Linguagem</span>
                 <div class="segmento" id="seg-linguagem" role="group" aria-label="Linguagem de programacao">
                   <button type="button" class="btn" data-linguagem="blocos" aria-pressed="true">Blocos</button>
-                  <button type="button" class="btn" data-linguagem="portugol" aria-pressed="false" disabled>Portugol</button>
+                  <button type="button" class="btn" data-linguagem="portugol" aria-pressed="false">Portugol</button>
                 </div>
-                <span class="campo-ajuda">O editor em Portugol chega na proxima atualizacao.</span>
+                <span class="campo-ajuda">Os dois editores desenham do mesmo jeito. O Portugol tem documentacao dentro do treino.</span>
               </div>
 
+            </div>
+
+            <div class="campo oculto" id="grupo-importar">
+              <span class="campo-rotulo">Suas imagens</span>
+              <div class="fileira">
+                <button type="button" class="btn" id="btn-escolher-imagens" data-icone="enviar">Escolher imagens</button>
+                <span class="texto-mini texto-suave" id="resumo-importadas">Nenhuma imagem carregada.</span>
+              </div>
+              <input type="file" id="inp-imagens" accept="image/*" multiple class="so-leitor">
+              <span class="campo-ajuda">
+                Cada imagem e reduzida para a resolucao escolhida e limitada a 16 cores.
+                Pixel art pequena funciona melhor.
+              </span>
+              <div class="fileira" id="tira-importadas" style="gap:6px"></div>
             </div>
 
             <div class="friso-alien" id="friso-config" aria-hidden="true"></div>
@@ -197,6 +211,8 @@
           <button type="button" class="btn btn-principal" id="btn-rodar" data-icone="rodar">Executar</button>
           <button type="button" class="btn btn-icone" id="btn-lento" title="Executar em camera lenta" aria-label="Executar em camera lenta" data-icone="lento"></button>
           <button type="button" class="btn btn-icone" id="btn-limpar-codigo" title="Limpar programa" aria-label="Limpar programa" data-icone="limpar"></button>
+          <button type="button" class="btn btn-icone oculto" id="btn-docs" title="Documentacao da biblioteca pixel" aria-label="Documentacao da biblioteca pixel" data-icone="ajuda"></button>
+          <button type="button" class="btn oculto" id="btn-resposta" data-icone="olho">Mostrar resposta</button>
           <span class="espaco" style="flex:1"></span>
           <button type="button" class="btn btn-icone" id="btn-pausar" title="Pausar" aria-label="Pausar" data-icone="pausar"></button>
           <button type="button" class="btn btn-icone" id="btn-reiniciar" title="Reiniciar cronometro" aria-label="Reiniciar cronometro" data-icone="reiniciar"></button>
@@ -216,6 +232,7 @@
 
       <div class="janela" id="area-grid">
         <div class="janela-barra">
+          <button type="button" class="btn btn-icone so-mobile" id="btn-voltar-codigo" title="Voltar para a area de programacao" aria-label="Voltar para a area de programacao" data-icone="voltar"></button>
           <span class="janela-titulo" id="nome-arte">Aguardando transmissao</span>
           <span class="espaco"></span>
           <button type="button" class="btn btn-icone btn-fantasma" id="btn-ver-alvo" title="Mostrar ou esconder a arte de referencia" aria-label="Mostrar ou esconder a arte de referencia" data-icone="olho"></button>
@@ -255,6 +272,15 @@
       </div>
 
       <div id="espelho-grid" title="Ver o grid"><canvas id="cv-espelho"></canvas></div>
+
+      <nav id="barra-abas" aria-label="Alternar entre codigo e grid">
+        <button type="button" class="btn" data-aba-alvo="codigo" aria-pressed="true">
+          <span class="slot-icone" data-icone="codigo" data-icone-tam="14"></span> Programacao
+        </button>
+        <button type="button" class="btn" data-aba-alvo="grid" aria-pressed="false">
+          <span class="slot-icone" data-icone="grid" data-icone-tam="14"></span> Grid
+        </button>
+      </nav>
     </section>
 
   </main>
@@ -344,6 +370,34 @@
       <button type="button" class="btn btn-icone btn-fantasma" data-fechar="modal-ajuda" aria-label="Fechar" data-icone="fechar"></button>
     </div>
     <div class="janela-corpo pilha rolagem-fina" id="corpo-ajuda"></div>
+  </div>
+</div>
+
+<div class="tapa-tela oculto" id="modal-docs" role="dialog" aria-modal="true" aria-labelledby="tit-docs">
+  <div class="janela modal">
+    <div class="janela-barra">
+      <span class="janela-titulo" id="tit-docs">Biblioteca pixel — documentacao</span>
+      <span class="espaco"></span>
+      <button type="button" class="btn btn-icone btn-fantasma" data-fechar="modal-docs" aria-label="Fechar" data-icone="fechar"></button>
+    </div>
+    <div class="janela-corpo pilha rolagem-fina" id="corpo-docs"></div>
+  </div>
+</div>
+
+<div class="tapa-tela oculto" id="modal-tempo" role="alertdialog" aria-modal="true" aria-labelledby="tit-tempo">
+  <div class="janela modal modal-estreito">
+    <div class="janela-barra">
+      <span class="janela-titulo" id="tit-tempo">Alerta do sistema</span>
+    </div>
+    <div class="janela-corpo pilha" style="text-align:center;padding:28px 20px">
+      <div class="display display-grande texto-ambar">TEMPO ESGOTADO</div>
+      <p class="texto-peq texto-suave" id="texto-tempo">
+        O cronometro da missao chegou ao fim. Seu relatorio esta pronto.
+      </p>
+    </div>
+    <div class="modal-rodape">
+      <button type="button" class="btn btn-principal" id="btn-ver-relatorio">Ver relatorio</button>
+    </div>
   </div>
 </div>
 

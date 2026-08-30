@@ -11,7 +11,7 @@
    Isso descarta os caches antigos e forca o download dos arquivos novos.
    ========================================================================= */
 
-const VERSAO = 'v1.0.0';
+const VERSAO = 'v2.0.0';
 const CACHE_CASCA = 'dcap-casca-' + VERSAO;
 const CACHE_DADOS = 'dcap-dados-' + VERSAO;
 
@@ -35,6 +35,12 @@ const CASCA = [
   'js/blocos/definicoes.js',
   'js/blocos/oficina.js',
   'js/modos/modos.js',
+  'js/modos/importada.js',
+  'js/portugol/lexer.js',
+  'js/portugol/parser.js',
+  'js/portugol/interpretador.js',
+  'js/portugol/documentacao.js',
+  'js/portugol/para-blocos.js',
   'js/ui/icones.js',
   'js/ui/audio.js',
   'js/ui/boot.js',

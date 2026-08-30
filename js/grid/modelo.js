@@ -9,6 +9,8 @@ export class ModeloGrid {
 
   trocarArte(arte) {
     this.arte = arte;
+    // Uma arte sem nenhum pixel alvo e uma tela livre: nada a corrigir.
+    this.verificar = arte.pintados > 0;
     this.largura = arte.largura;
     this.altura = arte.altura;
     this.pintado = new Int32Array(this.largura * this.altura).fill(-1);
@@ -46,6 +48,11 @@ export class ModeloGrid {
 
   /* Recalcula acertos e erros comparando com a arte alvo. */
   recontar() {
+    if (!this.verificar) {
+      this.acertos = 0;
+      this.erros = 0;
+      return { acertos: 0, erros: 0 };
+    }
     const { alvo } = this.arte;
     let acertos = 0, erros = 0;
     for (let i = 0; i < this.pintado.length; i++) {
@@ -59,6 +66,13 @@ export class ModeloGrid {
     return { acertos, erros };
   }
 
+  /* So conta como concluida quando cobre a arte inteira e nao sobra
+     nenhum pixel pintado fora do lugar. Sem isso daria para "completar"
+     uma arte de cor unica pintando o grid todo. */
+  completa() {
+    return this.verificar && this.erros === 0 && this.acertos >= this.arte.pintados;
+  }
+
   percentual() {
     const alvoPintados = this.arte.pintados;
     if (!alvoPintados) return 0;
@@ -67,6 +81,7 @@ export class ModeloGrid {
 
   /* Um pixel foi pintado com cor diferente da esperada. */
   ehErro(i) {
+    if (!this.verificar) return false;
     const p = this.pintado[i];
     return p !== -1 && p !== this.arte.alvo[i];
   }

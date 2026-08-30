@@ -348,21 +348,36 @@
 
 /* ================================================ abas para telas pequenas */
 #abas-mobile { display: none; }
+#barra-abas { display: none; }
+.so-mobile { display: none !important; }
 
 @media (max-width: 860px), (orientation: portrait) and (max-width: 1100px) {
   #tela-treino {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
     padding: var(--esp-2);
+    gap: var(--esp-2);
   }
   #divisor-paineis { display: none; }
 
   #tela-treino[data-aba="codigo"] #area-grid { display: none; }
   #tela-treino[data-aba="grid"] #area-codigo { display: none; }
 
-  #abas-mobile {
-    display: inline-flex;
-    order: 99;
+  /* As abas do cabecalho podiam sumir na rolagem horizontal e prender o aluno
+     na tela do grid. No celular a navegacao fica nesta barra fixa embaixo. */
+  #abas-mobile { display: none; }
+  .so-mobile { display: inline-flex !important; }
+
+  #barra-abas {
+    display: flex;
+    gap: var(--esp-2);
+    padding-top: 2px;
+  }
+  #barra-abas .btn { flex: 1 1 0; min-height: 44px; gap: 7px; }
+  #barra-abas .btn[aria-pressed="true"] {
+    border-color: var(--verde);
+    color: var(--verde);
+    background: var(--verde-vidro);
   }
 
   #barra-superior { gap: var(--esp-2); padding: 5px var(--esp-2); }
